@@ -1,0 +1,19 @@
+{
+  "name": "twitter-js",
+  "version": "1.0.0",
+  "description": "the better version of twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter",
+    "app"
+  ],
+  "author": "Bryce Frost",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.2",
+    "morgan": "^1.6.1"
+  }
+}
