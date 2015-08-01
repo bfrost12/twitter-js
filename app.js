@@ -8,19 +8,19 @@ app.use(morgan('dev'));
 var swig = require('swig');
 swig.setDefaults({ cache: false });
 
-
 //set up app to use Swig
 app.engine('html', swig.renderFile);
-
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
-app.get('/', function (req, res) {
-  var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-  res.render( 'index', {title: 'Hall of Fame', people: people} );
-});
+//we need routes! 
+var routes = require('./routes');
+app.use('/', routes);
 
-app.listen(3000, function(){
+app.listen(2000, function(){
 	console.log('server listening');
 });
+
+//stylesheets are static
+app.use(express.static(__dirname + '/public'));
 
