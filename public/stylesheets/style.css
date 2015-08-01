@@ -49,8 +49,19 @@ code {
   float: left;
   height: 48px;
   width: 48px;
-  content:url("http://lorempixel.com/48/48");
+  content:url("http://wmdmark.github.io/jquery-proquo/images/tweet.png");
 }
+
+.tweetText {
+  text-align: block;
+  text-decoration: none;
+  color: black;
+}
+
+.tweetText :hover {
+  text-decoration: none;
+}
+
 .content {
   margin-left: 60px;
 }

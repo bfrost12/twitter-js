@@ -3,21 +3,41 @@
 {% block content %}
   
   <div class="page-header">
-    <h1>Welcome to Twitter.js, Nimit!</h1>
+    <h1>{{title}}</h1>
   </div>
   <div class="row">
     <div class="col-md-3">
-      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
-      <b>Your Name</b><br>
-      100 followers
+      <img src="http://wmdmark.github.io/jquery-proquo/images/tweet.png"><br>
+      <b>Bryce Frost</b><br>
+      10,000,072 followers
     </div>
     <div class="col-md-9">
     
+   	  <!--display tweet form here-->
+   	  {% if showForm %}
+	  <form action="/submit" method="POST">
+	    <label for="name_field">Name:</label>
+	    <input name="name" type="text" id="name_field" />
+
+	    <label for="text_field">Text:</label>
+	    <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+	    <input type="submit" value="Submit" />
+	  </form>
+	  {% endif %}
+
       <!-- display tweets here -->
+      <h1>All Tweets</h1>
       {% for tweet in tweets %}
-        <li>{{tweet.text}}</li>
-      {% endfor %}
-      
+      <div class="tweetbox">
+      	<img>
+      	<a href="/users/{{tweet.name}}">{{tweet.name}}</a>
+      	<p>
+        	<a href="/users/{{tweet.name}}/tweets/{{tweet.id}}" class="tweetText">{{tweet.text}}</a>
+        	<br><a href="./">Re-tweet</a>
+        </p>
+      </div>
+      {% endfor %}      
     </div>
   </div>
     
